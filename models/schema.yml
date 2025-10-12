@@ -1,0 +1,19 @@
+version: 2
+
+models:
+  - name: stg_orders
+    description: "Aggregated order data from orders + order_items"
+    columns:
+      - name: order_id
+        description: "Unique order identifier"
+        tests:
+          - not_null
+          - unique
+      - name: user_id
+        description: "Customer identifier"
+        tests:
+          - not_null
+      - name: total_sale_price
+        description: "Total sale price for the order"
+        tests:
+          - not_null
